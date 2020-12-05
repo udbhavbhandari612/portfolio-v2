@@ -1,0 +1,47 @@
+.root-el {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@function multiple-box-shadow($n) {
+  $value: "#{random(2000)}px #{random(2000)}px #FFF";
+  @for $i from 2 through $n {
+    $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF";
+  }
+  @return unquote($value);
+}
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.stars {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  #stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+  #stars2 {
+    width: 1.5px;
+    height: 1.5px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+  #stars3 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}

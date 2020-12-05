@@ -1,0 +1,70 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+.link {
+    color: inherit;
+    &:hover {
+        color: inherit;
+    }
+}
+
+.logo {
+    font-size: 2rem;
+    font-family: "Major Mono Display", monospace;
+    font-weight: 500;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 40%;
+        top: -50%;
+        transform: skew(25deg);
+        width: 4rem;
+        height: 6rem;
+        border-radius: 50%;
+        animation: revolve 4s linear infinite;
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        left: 40%;
+        top: -50%;
+        transform: skew(25deg);
+        width: 4rem;
+        height: 6rem;
+        border-radius: 50%;
+        animation: reverse-revolve 4s linear infinite;
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes revolve {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(65deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+@keyframes reverse-revolve {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(-25deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .logo {
+        font-size: 1.8rem;
+    }
+}

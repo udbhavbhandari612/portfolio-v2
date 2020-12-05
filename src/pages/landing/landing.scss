@@ -1,0 +1,62 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+.main-container {
+    div:first-child {
+        max-width: 70%;
+    }
+    .cover1 {
+        transform: scale(1.2);
+        max-width: 100%;
+        position: relative;
+        z-index: 1;
+        top: 20%;
+        background-color: transparent;
+        filter: grayscale(5);
+    }
+
+    .cover1-bg {
+        position: absolute;
+        top: 0;
+        left: -20%;
+        filter: grayscale(3) blur(3px) opacity(0.4);
+        z-index: 0;
+        width: auto;
+        height: 100%;
+    }
+
+    .relaunch {
+        position: absolute;
+        top: 2rem;
+        z-index: 0;
+        right: 2rem;
+        width: 15rem;
+        opacity: 0.5;
+    }
+    .home-heading {
+        font-size: 3.2rem;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .main-container {
+        div:first-child {
+            max-width: 95%;
+        }
+        .cover1 {
+            transform: scale(1.1);
+            height: 18rem;
+            top: 0;
+        }
+        .relaunch {
+            top: auto;
+            bottom: 2rem;
+            right: 2rem;
+            opacity: 0.3;
+        }
+        .home-heading {
+            font-size: 2.8rem;
+        }
+    }
+}
